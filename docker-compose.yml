@@ -4,14 +4,15 @@ services:
   webserver:
     image: nginx:1.21.6-alpine
     ports:
-      - 80:80
-      - 443:443
+    - 80:80
+    - 443:443
     restart: always
     volumes:
-      - ./nginx/conf/:/etc/nginx/conf.d/:ro
-      - ./certbot/www:/var/www/certbot/:ro
-      - ./anatole/exampleSite/public:/usr/share/nginx/html:ro
+    - ./certbot/conf:/etc/letsencrypt
+    - ./certbot/www:/var/www/certbot
+    - ./anatole/exampleSite/public:/usr/share/nginx/html:ro
   certbot:
     image: certbot/certbot:latest
     volumes:
-      - ./certbot/www/:/var/www/certbot/:rw
+    - ./certbot/conf:/etc/letsencrypt
+    - ./certbot/www:/var/www/certbot
