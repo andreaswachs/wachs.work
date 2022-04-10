@@ -2,6 +2,16 @@
 author = "Hugo Authors"
 +++
 
+# Introduction :rocket:
+
+I'm a software development student, with a heart and soul that belongs mainly in back-end development. Since starting my studies, I have become increasingly interested in functional programming. I find the discrete mathematics field very interesting — although I'm certainly not a naturally gifted mathematics student.
+
+You might find something of interest on this website throughout time, should you be interested in
+
+- Functional programming, or sometimes just programming in general
+- DevOps
+- Mechanical keyboards
+
 <!--
 This file is left intentionally empty by default to be backwards compatible with the initial theme setup.
 

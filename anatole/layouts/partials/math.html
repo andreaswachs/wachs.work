@@ -20,16 +20,16 @@
     </script>
 
   {{- else -}}
-    {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" -}}
-    {{- $hash := "sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" -}}
+    {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" -}}
+    {{- $hash := "sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" -}}
     <link rel="stylesheet" href="{{- $url -}}" integrity="{{- $hash -}}" crossorigin="anonymous" />
 
-    {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" -}}
-    {{- $hash := "sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" -}}
+    {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" -}}
+    {{- $hash := "sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" -}}
     <script defer src="{{- $url -}}" integrity="{{- $hash -}}" crossorigin="anonymous"></script>
 
-    {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" -}}
-    {{- $hash := "sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" -}}
+    {{- $url := "https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" -}}
+    {{- $hash := "sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" -}}
     <script
       defer
       src="{{- $url -}}"
@@ -37,6 +37,24 @@
       crossorigin="anonymous"
       onload="renderMathInElement(document.body);"
     ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+          });
+      });
+  </script>
+  
 
   {{- end -}}
 
