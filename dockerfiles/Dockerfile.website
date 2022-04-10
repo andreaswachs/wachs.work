@@ -1,0 +1,10 @@
+# This dockerfile assumes that the website has been published
+
+FROM nginx:1.21.6-alpine as base
+
+# Copy webpage
+COPY anatole/exampleSite/public /usr/share/nginx/html
+
+# Copy SSL key and cert
+COPY secrets/nginx-selfsigned.key /etc/ssl/private/nginx-selfsigned.key
+COPY secrets/nginx-selfsigned.crt /etc/ssl/certs/nginx-selfsigned.crt
